@@ -1,17 +1,3 @@
-# dialog-proxy-api
-
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run ./src/app.js
-```
-
 # VF Proxy API
 
 This is a Bun application that serves as a proxy to use Voiceflow Dialog API and update agent's variables on client side. The application uses fastify for server/routes setup.
@@ -22,11 +8,12 @@ The main goal is to provide an endpoint you can use from the client side (webpag
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/your-repo/.git
+git clone https://github.com/voiceflow-gallagan/vf-proxy-api.git
 cd vf-proxy-api
 ```
 
-2. Install Bun and dependencies:
+2. For Local/Dev only (you don't need this if you want to use Docker)
+   Install Bun and dependencies:
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
@@ -58,16 +45,13 @@ The application uses the following environment variables which are stored in a `
 
 ### Run/Test locally
 
-When the app is not running with PM2, it will start an interactive prompt where you can update the KB or exit the app. If you choose to update the KB, it will ask for your KB API key, project ID, sitemap URL, whether to force the update and the number of previous days to check for last modification date.
-Run the application in interactive mode:
-
 ```bash
 bun run app
 ```
 
 ### Docker
 
-To simply the process, we are providing the Dockerfile and docker-compose file to build the Bun image and run the application.
+To simplify the process, we are providing the Dockerfile and docker-compose file to build the Bun image and run the application.
 
 ```bash
 bun run docker-start
@@ -90,10 +74,6 @@ bun run docker-start
 
   Variables should already exist in your Voiceflow agent to be succefuly updated.
 
-
-## Video Tutorial
-
-[![Video Tutorial](https://img.youtube.com/vi/NaeWfDCNmMM/0.jpg)](https://youtu.be/NaeWfDCNmMM)
 
 
 ## Voiceflow Discord
