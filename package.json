@@ -1,0 +1,22 @@
+{
+  "name": "vf-proxy-api",
+  "module": "app.js",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "scripts": {
+    "dev": "bun --watch ./src/app.js",
+    "app": "bun ./src/app.js",
+    "test": "pm2 start ./src/app.js",
+    "docker-start": "docker-compose down --rmi all && docker-compose up --remove-orphans --build -d",
+    "docker-stop": "docker-compose down"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^8.0.3",
+    "fastify": "^4.24.3"
+  }
+}
