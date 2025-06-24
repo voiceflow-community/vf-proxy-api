@@ -81,3 +81,6 @@ bun run docker-start
 We can talk about this project on Discord
 https://discord.gg/9JRv5buT39
 
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=voiceflow-community_vf-proxy-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=voiceflow-community_vf-proxy-api)
+
