@@ -54,7 +54,7 @@ fastify.route({
     params: {
       type: 'object',
       properties: {
-        userID: { type: 'string', pattern: '^\\S+$' },
+        userID: { type: 'string', pattern: '^[a-zA-Z0-9_-]+$' },
       },
       required: ['userID'],
     },
@@ -88,8 +88,10 @@ fastify.route({
     const userID = request.params.userID
     const variables = request.body
     const versionID = request.headers['versionid']
+    // Encode userID to prevent path manipulation
+    const safeUserID = encodeURIComponent(userID)
     const response = await fetch(
-      `${Bun.env.VOICEFLOW_ENDPOINT}/state/user/${userID}/variables`,
+      `${Bun.env.VOICEFLOW_ENDPOINT}/state/user/${safeUserID}/variables`,
       {
         method: 'PATCH',
         body: JSON.stringify(variables),
